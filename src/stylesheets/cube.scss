@@ -1,0 +1,24 @@
+.cube-square--yellow {
+  @include cube-square();
+  background-color: $yellow;
+}
+.cube-square--red {
+  @include cube-square();
+  background-color: $red;
+}
+.cube-square--white {
+  @include cube-square();
+  background-color: $white;
+}
+.cube-square--orange {
+  @include cube-square();
+  background-color: $orange;
+}
+.cube-square--blue {
+  @include cube-square();
+  background-color: $blue;
+}
+.cube-square--green {
+  @include cube-square();
+  background-color: $green;
+}
