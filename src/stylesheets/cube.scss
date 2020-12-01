@@ -1,24 +1,19 @@
-.cube-square--yellow {
-  @include cube-square();
-  background-color: $yellow;
-}
-.cube-square--red {
-  @include cube-square();
-  background-color: $red;
-}
-.cube-square--white {
-  @include cube-square();
-  background-color: $white;
-}
-.cube-square--orange {
-  @include cube-square();
-  background-color: $orange;
-}
-.cube-square--blue {
-  @include cube-square();
-  background-color: $blue;
-}
-.cube-square--green {
-  @include cube-square();
-  background-color: $green;
+.cube-container {
+  width: 8rem;
+  margin: auto;
+  .cube-front-face {
+    display: flex;
+    flex-wrap: wrap;
+    @include cube-face();
+  }
+  .cube-right-face {
+    display: flex;
+    flex-wrap: wrap;
+    @include cube-face();
+  }
+  .cube-left-face {
+    display: flex;
+    flex-wrap: wrap;
+    @include cube-face();
+  }
 }

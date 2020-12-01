@@ -1,10 +1,10 @@
-import Cube from "./pages/Cube";
+import Main from "./pages/Main";
 
 function App() {
   return (
     <div className="App">
       <h1>The Rubix Cube</h1>
-      <Cube />
+      <Main />
     </div>
   );
 }
