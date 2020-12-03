@@ -8,12 +8,36 @@ export const CubeState = ({ children }) => {
   const initialState = {
     isLoading: false,
     cube: {
-      top_face: Array(9).fill("yellow"),
-      right_face: Array(9).fill("red"),
-      left_face: Array(9).fill("white"),
-      front_face: Array(9).fill("orange"),
-      back_face: Array(9).fill("blue"),
-      bottom_face: Array(9).fill("green"),
+      bottom_face: {
+        top: Array(3).fill("green"),
+        mid: Array(3).fill("green"),
+        bot: Array(3).fill("green"),
+      },
+      left_face: {
+        top: Array(3).fill("white"),
+        mid: Array(3).fill("white"),
+        bot: Array(3).fill("white"),
+      },
+      front_face: {
+        top: Array(3).fill("orange"),
+        mid: Array(3).fill("orange"),
+        bot: Array(3).fill("orange"),
+      },
+      right_face: {
+        top: Array(3).fill("red"),
+        mid: Array(3).fill("red"),
+        bot: Array(3).fill("red"),
+      },
+      top_face: {
+        top: Array(3).fill("yellow"),
+        mid: Array(3).fill("yellow"),
+        bot: Array(3).fill("yellow"),
+      },
+      back_face: {
+        top: Array(3).fill("blue"),
+        mid: Array(3).fill("blue"),
+        bot: Array(3).fill("blue"),
+      },
     },
   };
 

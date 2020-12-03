@@ -1,11 +1,31 @@
 import shortid from "shortid";
 
-const Face = ({ cube, name }) => {
+const Face = ({ cube }) => {
   return (
-    <div className={name}>
+    <div className="face">
       {cube &&
-        cube.map((data) => (
-          <div key={shortid.generate()} className={`cube-square--${data}`} />
+        cube.top.map((data) => (
+          <div
+            key={shortid.generate()}
+            className="cube-square"
+            style={{ background: data }}
+          />
+        ))}
+      {cube &&
+        cube.mid.map((data) => (
+          <div
+            key={shortid.generate()}
+            className="cube-square"
+            style={{ background: data }}
+          />
+        ))}
+      {cube &&
+        cube.mid.map((data) => (
+          <div
+            key={shortid.generate()}
+            className="cube-square"
+            style={{ background: data }}
+          />
         ))}
     </div>
   );

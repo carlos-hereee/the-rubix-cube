@@ -1,7 +1,7 @@
 import Cube from "./Cube";
 
 const Main = () => (
-  <div>
+  <div className="viewport">
     <Cube />
   </div>
 );

@@ -1,19 +1,62 @@
-.cube-container {
-  width: 8rem;
-  margin: auto;
-  .cube-front-face {
-    display: flex;
-    flex-wrap: wrap;
-    @include cube-face();
+.viewport {
+  padding-top: 3rem;
+  perspective: 800px;
+  perspective-origin: 50% 200px;
+  transform: scale(0.8, 0.8);
+  .cube {
+    position: relative;
+    margin: 0 auto;
+    height: 300px;
+    width: 300px;
+    transform-style: preserve-3d;
+    transform: rotateX(136deg) rotateY(1122deg);
+    .face {
+      position: absolute;
+      height: 300px;
+      width: 300px;
+      display: flex;
+      flex-wrap: wrap;
+      .cube-square {
+        width: 98px;
+        height: 98px;
+        border: 1px solid black;
+        border-radius: 10px;
+        transform: rotate(180deg);
+        &:hover {
+          cursor: grab;
+        }
+        &:active {
+          cursor: grabbing;
+        }
+      }
+      &:first-child {
+        transform: rotateX(90deg) translateZ(150px);
+      }
+      &:nth-child(2) {
+        transform: translateZ(150px);
+      }
+      &:nth-child(3) {
+        transform: rotateY(90deg) translateZ(150px);
+      }
+      &:nth-child(4) {
+        transform: rotateY(180deg) translateZ(150px);
+      }
+      &:nth-child(5) {
+        transform: rotateY(-90deg) translateZ(150px);
+      }
+      &:nth-child(6) {
+        transform: rotateX(-90deg) rotate(180deg) translateZ(150px);
+      }
+    }
   }
-  .cube-right-face {
-    display: flex;
-    flex-wrap: wrap;
-    @include cube-face();
-  }
-  .cube-left-face {
-    display: flex;
-    flex-wrap: wrap;
-    @include cube-face();
+}
+
+@media (max-width: 640px) {
+  .viewport {
+    -webkit-transform: scale(0.6, 0.6);
+    -moz-transform: scale(0.6, 0.6);
+    -ms-transform: scale(0.6, 0.6);
+    -o-transform: scale(0.6, 0.6);
+    transform: scale(0.6, 0.6);
   }
 }

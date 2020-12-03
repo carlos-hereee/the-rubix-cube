@@ -1,7 +1,8 @@
 @mixin cube-square {
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   border: 1px solid black;
+  border-radius: 4px;
 }
 
 @mixin cube-face {
