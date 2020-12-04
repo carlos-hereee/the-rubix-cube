@@ -1,12 +1,14 @@
 import React, { createContext, useReducer } from "react";
 import { reducer } from "./reducer";
-import { IS_LOADING } from "./types";
+import { IS_LOADING, SET_ERROR } from "./types";
 
 export const CubeContext = createContext();
 
 export const CubeState = ({ children }) => {
   const initialState = {
+    errorMessage: "",
     isLoading: false,
+    isTurned: false,
     cube: {
       bottom_face: {
         top: Array(3).fill("green"),
@@ -43,9 +45,17 @@ export const CubeState = ({ children }) => {
 
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  const turnCube = () =>
+    dispatch({ type: IS_LOADING, payload: (state.isTurned = !state.isTurned) });
+
   return (
     <CubeContext.Provider
-      value={{ cube: state.cube, isLoading: state.isLoading }}>
+      value={{
+        isLoading: state.isLoading,
+        isTurned: state.isTurned,
+        cube: state.cube,
+        turnCube,
+      }}>
       {children}
     </CubeContext.Provider>
   );

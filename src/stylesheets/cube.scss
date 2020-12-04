@@ -16,7 +16,6 @@
     }
     &:active {
       cursor: grabbing;
-      transform: rotateX(var(--mouse-x) rotateY(var(--mouse-y)));
     }
     .face {
       position: absolute;
@@ -51,5 +50,8 @@
         transform: rotateX(-90deg) rotate(180deg) translateZ(150px);
       }
     }
+  }
+  #backside-cube {
+    transform: rotateX(316deg) rotateY(1122deg);
   }
 }

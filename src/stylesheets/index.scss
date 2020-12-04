@@ -5,4 +5,8 @@
 .App {
   max-width: 1400px;
   margin: auto;
+  .main-wrapper {
+    display: flex;
+    justify-content: space-around;
+  }
 }
