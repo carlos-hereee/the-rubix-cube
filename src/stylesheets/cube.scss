@@ -10,24 +10,27 @@
     width: 300px;
     transform-style: preserve-3d;
     transform: rotateX(136deg) rotateY(1122deg);
+    transition: transform 1s;
+    &:hover {
+      cursor: grab;
+    }
+    &:active {
+      cursor: grabbing;
+      transform: rotateX(var(--mouse-x) rotateY(var(--mouse-y)));
+    }
     .face {
       position: absolute;
       height: 300px;
       width: 300px;
       display: flex;
       flex-wrap: wrap;
+      background-color: black;
       .cube-square {
         width: 98px;
         height: 98px;
         border: 1px solid black;
         border-radius: 10px;
         transform: rotate(180deg);
-        &:hover {
-          cursor: grab;
-        }
-        &:active {
-          cursor: grabbing;
-        }
       }
       &:first-child {
         transform: rotateX(90deg) translateZ(150px);
@@ -48,15 +51,5 @@
         transform: rotateX(-90deg) rotate(180deg) translateZ(150px);
       }
     }
-  }
-}
-
-@media (max-width: 640px) {
-  .viewport {
-    -webkit-transform: scale(0.6, 0.6);
-    -moz-transform: scale(0.6, 0.6);
-    -ms-transform: scale(0.6, 0.6);
-    -o-transform: scale(0.6, 0.6);
-    transform: scale(0.6, 0.6);
   }
 }
